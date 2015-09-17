@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head>
+        <meta name="viewport" content="initial-scale=1.0">
+    	<meta charset="utf-8">
+        
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="scripts/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <link href="css/estilo.css" rel="stylesheet">
+
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClTMOVOkTnEOnhWNjWA7estvUnWP6nzNQ&callback=initMap" async defer></script>
+        <script src="scripts/jquery-ui/jquery-ui.js" ></script>
+        <script src="scripts/scripts.js" ></script>
+        
+
+    </head><body>
+
+<div class="navbar navbar-default navbar-static-top"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"><span>Brand</span></a>
+
+<div id="floating-panel">
+    <input id="address" type="textbox" value="Fortaleza, Ceará" size="50"/>
+    <input id="submit" type="button" value="Encontrar"/>
+</div>
+
+<div>
+	<input id="butCadastrarAcademia" type="submit" value="Cadastre sua Academia">
+</div>
+
+</div><div class="collapse navbar-collapse" id="navbar-ex-collapse"><ul class="nav navbar-nav navbar-right"><li class="active"><a href="#">Home</a></li><li><a href="#">Contacts</a></li></ul></div></div></div>
+
+
+<div id="map"></div>
+
+<footer class="section section-primary"> <div class="container"> <div class="row"> <div class="col-sm-6"> <h1>Footer header</h1> <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud</p></div><div class="col-sm-6"> <p class="text-info text-right"> <br><br></p><div class="row"> <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left"> <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a> </div></div><div class="row"> <div class="col-md-12 hidden-xs text-right"> <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a> </div></div></div></div></div></footer>
+
+
+<div id="dialogCadastro" title="Cadastre sua Academia">
+  
+  Estado: <input id="campoEstado" type="text" value=""/> <br/>
+  Cidade: <input id="campoCidade" type="text" value=""/> <br/>
+  Bairro: <input id="campoBairro" type="text" value=""/> <br/>
+  Rua: <input id="campoRua" type="text" value=""/> <br/>
+  Número: <input id="campoNumero" type="text" value=""/> 
+  
+  
+  
+</div>
+
+</body>
+</html>

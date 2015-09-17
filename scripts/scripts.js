@@ -47,7 +47,7 @@ $(function() {
 		  width: 450,
 		  modal: false,
 		  buttons: {
-		    "Cadastrar Academia": buscarNoMapa,
+		    "Cadastrar Academia": cadastrarAcademia,
 		    Cancel: function() {
 		      dialog.dialog( "close" );
 		    }
@@ -87,8 +87,11 @@ function somarInformacoesEPosicionarMarker(){
   	posicionarPorEndereco(endereco, geocoder, map)
 }
 
-function buscarNoMapa(){
-	alert('Buscar no mapa agora!');
+function cadastrarAcademia(){
+	$.post( "php/cadastros.php", function( data ) {
+		//$( ".result" ).html( data );
+		alert('enviado!!!')
+	});
 }
 
 function removerTodosOsPontos(){
