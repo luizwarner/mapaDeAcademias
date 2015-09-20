@@ -1,5 +1,6 @@
 var map;
 var arrayDePontos = [];
+var posicaoAux;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -3.7318616, lng: -38.5266704},
@@ -21,6 +22,7 @@ function posicionarPorEndereco(endereco, geocoder, resultsMap){
 	geocoder.geocode({'address': endereco}, function(results, status) {
     	if (status === google.maps.GeocoderStatus.OK) {
 	    	resultsMap.setCenter(results[0].geometry.location);
+	    	posicaoAux = results[0].geometry.location;
 	      	var marker = new google.maps.Marker({
 		        map: resultsMap,
 		        position: results[0].geometry.location,
@@ -88,10 +90,11 @@ function somarInformacoesEPosicionarMarker(){
 }
 
 function cadastrarAcademia(){
-	$.post( "php/cadastros.php", function( data ) {
-		//$( ".result" ).html( data );
-		alert('enviado!!!')
-	});
+	$.post( "php/cadastros.php", {posicao:posicaoAux})
+		.done(function( data ) {
+			//$( ".result" ).html( data );
+			alert('enviado!!!')
+		});
 }
 
 function removerTodosOsPontos(){
