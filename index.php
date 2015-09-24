@@ -1,3 +1,6 @@
+<?php
+require_once('php/conexao.php'); 
+?>
 <!DOCTYPE html>
 <html><head>
         <meta name="viewport" content="initial-scale=1.0">
