@@ -1,5 +1,9 @@
 <?php
-require_once('php/conexao.php'); 
+require_once('php/conexao.php');
+require_once('php/scripts.php'); 
+require_once('php/consultas.php'); 
+
+$equipes = consultarEquipes();
 ?>
 <!DOCTYPE html>
 <html><head>
@@ -47,6 +51,19 @@ require_once('php/conexao.php');
   Rua: <input id="campoRua" type="text" value=""/> <br/>
   Número: <input id="campoNumero" type="text" value=""/> 
   
+  <br/><br/>
+  Qual a equipe?
+  <table>
+    <?php
+      print $equipes->count;
+
+      $equipe = $equipes->getIterator();
+      while($equipe->valid()){?>
+      <tr>
+        <td><img width="50" heigth="50" src="imagens/<?php print $equipe->enderecoLogo;?>"/></td>
+      </tr>
+    <?php } ?>
+  </table>
   
   
 </div>

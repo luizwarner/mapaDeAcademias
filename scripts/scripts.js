@@ -31,7 +31,7 @@ function posicionarPorEndereco(endereco, geocoder, resultsMap){
 	      	arrayDePontos.push(marker);
 	      	map.setZoom(20)
 	    } else {
-	    	alert('Geocode was not successful for the following reason: ' + status);
+	    	//alert('Geocode was not successful for the following reason: ' + status);
 	    }
 	});
 }
@@ -83,17 +83,19 @@ function somarInformacoesEPosicionarMarker(){
 	endereco += $('#campoBairro').val() + ', ';
 	endereco += $('#campoRua').val() + ', ';
 	endereco += $('#campoNumero').val()
-	alert(endereco);
+	//alert(endereco);
 	removerTodosOsPontos();
   	geocoder = new google.maps.Geocoder();
   	posicionarPorEndereco(endereco, geocoder, map)
 }
 
-function cadastrarAcademia(){
-	$.post( "php/cadastros.php", {posicao:posicaoAux})
+function cadastrarAcademia(){	
+	$.post( "php/scripts.php", {operacao:'cadastrarAcademia', posicao:111111})
 		.done(function( data ) {
 			//$( ".result" ).html( data );
 			alert('enviado!!!')
+		}).fail(function(){
+			alert('faiô!!!')
 		});
 }
 
@@ -101,4 +103,14 @@ function removerTodosOsPontos(){
 	for (var i = 0; i < arrayDePontos.length; i++) {
     arrayDePontos[i].setMap(null);
   }
+}
+
+function consultarEquipes(){	
+	$.post( "php/scripts.php", {operacao:'consultarEquipes'})
+		.done(function( data ) {
+			$( ".result" ).html( data );
+			alert('enviado!!!')
+		}).fail(function(){
+			alert('faiô!!!')
+		});
 }

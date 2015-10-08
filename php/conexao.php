@@ -7,9 +7,9 @@
 }*/
 
 function getConexao(){
-	if($conexao == null or $conexao == undefined){
-		$conexao = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=root") or die ("Não foi possivel conectar ao servidor PostGreSQL");
-	}
+	//if($conexao == null or $conexao == undefined){
+	$conexao = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=root") or die ("Não foi possivel conectar ao servidor PostGreSQL");
+	//}
 	return $conexao;
 }
 
