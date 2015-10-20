@@ -2,8 +2,10 @@
 require_once('php/conexao.php');
 require_once('php/scripts.php'); 
 require_once('php/consultas.php'); 
+require_once('php/classes/Equipe.php');
 
 $equipes = consultarEquipes();
+print 'teste --------'.count($equipes);
 ?>
 <!DOCTYPE html>
 <html><head>
@@ -53,17 +55,20 @@ $equipes = consultarEquipes();
   
   <br/><br/>
   Qual a equipe?
-  <table>
+  <select id="idEquipe" name="idEquipe">
     <?php
-      print $equipes->count;
+      foreach($equipes as $equipe){ ?>
+      <option value="<?php print $equipe->idEquipe;?>">
+        <?php print $equipe->nomeEquipe; ?>
+      </option>
+      
+      <?php } ?>
+  </select>
 
-      $equipe = $equipes->getIterator();
-      while($equipe->valid()){?>
-      <tr>
-        <td><img width="50" heigth="50" src="imagens/<?php print $equipe->enderecoLogo;?>"/></td>
-      </tr>
-    <?php } ?>
-  </table>
+  <br/><br/>
+  Nome da Academia: <input type="text" id="nomeAcademia" size="30"/><br/>
+  Sobre a Academia: <textarea id="descricao" rows="3" cols="40"></textarea>
+
   
   
 </div>
