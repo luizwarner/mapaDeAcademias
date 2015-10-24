@@ -90,7 +90,9 @@ function somarInformacoesEPosicionarMarker(){
 }
 
 function cadastrarAcademia(){	
-	$.post( "php/scripts.php", {operacao:'cadastrarAcademia', posicao:111111})
+	$.post( "php/scripts.php", {operacao:'cadastrarAcademia', nomeAcademia:$nomeAcademia, posicao:$posicao, 
+								estado:$estado, cidade:$cidade, bairro:$bairro, rua:$rua, numero:$numero, 
+								descricao:$descricao, cdEquipe:$cdEquipe})
 		.done(function( data ) {
 			//$( ".result" ).html( data );
 			alert('enviado!!!')
