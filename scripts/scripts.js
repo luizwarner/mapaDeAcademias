@@ -60,39 +60,51 @@ $(function() {
 		});
       });
 
-      $('#campoEstado').blur(function(){
+      $('#estado').blur(function(){
     	somarInformacoesEPosicionarMarker();
       })
-      $('#campoCidade').blur(function(){
+      $('#cidade').blur(function(){
     	somarInformacoesEPosicionarMarker();
       })
-      $('#campoBairro').blur(function(){
+      $('#bairro').blur(function(){
+       	somarInformacoesEPosicionarMarker();
+      })
+      $('#rua').blur(function(){
     	somarInformacoesEPosicionarMarker();
       })
-      $('#campoRua').blur(function(){
-    	somarInformacoesEPosicionarMarker();
-      })
-      $('#campoNumero').blur(function(){
+      $('#numero').blur(function(){
     	somarInformacoesEPosicionarMarker();
       })
 });
 
 function somarInformacoesEPosicionarMarker(){
-	var endereco = $('#campoEstado').val() + ', ';
-	endereco += $('#campoCidade').val() + ', ';
-	endereco += $('#campoBairro').val() + ', ';
-	endereco += $('#campoRua').val() + ', ';
-	endereco += $('#campoNumero').val()
+	var endereco = $('#estado').val() + ', ';
+	endereco += $('#cidade').val() + ', ';
+	endereco += $('#bairro').val() + ', ';
+	endereco += $('#rua').val() + ', ';
+	endereco += $('#numero').val()
 	//alert(endereco);
 	removerTodosOsPontos();
   	geocoder = new google.maps.Geocoder();
   	posicionarPorEndereco(endereco, geocoder, map)
 }
 
-function cadastrarAcademia(){	
-	$.post( "php/scripts.php", {operacao:'cadastrarAcademia', nomeAcademia:$nomeAcademia, posicao:$posicao, 
-								estado:$estado, cidade:$cidade, bairro:$bairro, rua:$rua, numero:$numero, 
-								descricao:$descricao, cdEquipe:$cdEquipe})
+function cadastrarAcademia(){
+
+	nomeAcademia = $('#nomeAcademia').val();
+	estado = $('#estado').val();
+	cidade = $('#cidade').val();
+	bairro = $('#bairro').val();
+	rua = $('#rua').val();
+	numero = $('#numero').val();
+	descricao = $('#descricao').val();
+	cdEquipe = $('#cdEquipe').val();
+
+	alert('----------' + posicaoAux)
+
+	$.post( "php/scripts.php", {operacao:'cadastrarAcademia', nomeAcademia:nomeAcademia, posicao:'teste', 
+								estado:estado, cidade:cidade, bairro:bairro, rua:rua, numero:numero, 
+								descricao:descricao, cdEquipe:cdEquipe})
 		.done(function( data ) {
 			//$( ".result" ).html( data );
 			alert('enviado!!!')

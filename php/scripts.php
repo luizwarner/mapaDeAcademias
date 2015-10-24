@@ -49,7 +49,25 @@ function cadastrarAcademia(){
 		nr_academia, 
 		ds_academia, 
 		cd_equipe) 
-	values($nomeAcademia, $posicao, $estado, $cidade, $bairro, $rua, $numero, $descricao, $cdEquipe)");
+	values( '".getValor($nomeAcademia)."', 'getValor($posicao)', 'getValor($estado)', 
+			'getValor($cidade)', 'getValor($bairro)', 'getValor($rua)', '2930', 
+			'getValor($descricao)', $cdEquipe)");
+}
+
+function getValor($valor = ''){
+
+	if(is_null($valor)){
+		return '';
+	}
+	return $valor;
+}
+
+function getValorInteiro($valor = 0){
+
+	if(is_null($valor)){
+		return 0;
+	}
+	return $valor;
 }
 
 

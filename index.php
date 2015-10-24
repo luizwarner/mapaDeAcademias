@@ -47,15 +47,15 @@ print 'teste --------'.count($equipes);
 
 <div id="dialogCadastro" title="Cadastre sua Academia">
   
-  Estado: <input id="campoEstado" type="text" value=""/> <br/>
-  Cidade: <input id="campoCidade" type="text" value=""/> <br/>
-  Bairro: <input id="campoBairro" type="text" value=""/> <br/>
-  Rua: <input id="campoRua" type="text" value=""/> <br/>
-  Número: <input id="campoNumero" type="text" value=""/> 
+  Estado: <input id="estado" type="text" value=""/> <br/>
+  Cidade: <input id="cidade" type="text" value=""/> <br/>
+  Bairro: <input id="bairro" type="text" value=""/> <br/>
+  Rua: <input id="rua" type="text" value=""/> <br/>
+  Número: <input id="numero" type="text" value=""/> 
   
   <br/><br/>
   Qual a equipe?
-  <select id="idEquipe" name="idEquipe">
+  <select id="cdEquipe" name="cdEquipe">
     <?php
       foreach($equipes as $equipe){ ?>
       <option value="<?php print $equipe->idEquipe;?>">
