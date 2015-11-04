@@ -100,9 +100,9 @@ function cadastrarAcademia(){
 	descricao = $('#descricao').val();
 	cdEquipe = $('#cdEquipe').val();
 
-	alert('----------' + posicaoAux)
+	var posicaoStr = "("+posicaoAux.lat()+", "+posicaoAux.lng()+")";
 
-	$.post( "php/scripts.php", {operacao:'cadastrarAcademia', nomeAcademia:nomeAcademia, posicao:'teste', 
+	$.post( "php/scripts.php", {operacao:'cadastrarAcademia', nomeAcademia:nomeAcademia, posicao:posicaoStr, 
 								estado:estado, cidade:cidade, bairro:bairro, rua:rua, numero:numero, 
 								descricao:descricao, cdEquipe:cdEquipe})
 		.done(function( data ) {

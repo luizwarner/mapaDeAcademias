@@ -49,9 +49,9 @@ function cadastrarAcademia(){
 		nr_academia, 
 		ds_academia, 
 		cd_equipe) 
-	values( '".getValor($nomeAcademia)."', 'getValor($posicao)', 'getValor($estado)', 
-			'getValor($cidade)', 'getValor($bairro)', 'getValor($rua)', '2930', 
-			'getValor($descricao)', $cdEquipe)");
+	values( '".getValor($nomeAcademia)."', '".getValor($posicao)."', '".getValor($estado)."', 
+			'".getValor($cidade)."', '".getValor($bairro)."', '".getValor($rua)."', '2930', 
+			'".getValor($descricao)."', $cdEquipe)");
 }
 
 function getValor($valor = ''){
